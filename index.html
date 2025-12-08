@@ -289,8 +289,7 @@
       <section id="data">
         <h2>Data</h2>
         <p class="section-intro">
-          Datasets used or released by this project. Include links, formats, and
-          access instructions.
+          The ParlaCAP dataset and supporting fine-tuning data that allowed for building the ParlaCAP dataset.
         </p>
         <ul class="item-list">
           <li>
@@ -299,14 +298,14 @@
             <div class="item-description">
               The ParlaCAP dataset consists of 8 million speeches from 28 European national and regional parliaments, with each speech coded with the sentiment expressed (ParlaSent coding from negative, over neutral, to positive) and the topic discussed (Comparative Agendas Project coding with 22 topics), and rich metadata on the speakers, parties and democracies. The dataset is an extension of the ParlaMint 5.0 dataset, which was primarily focused on the transcripts of parliamentary speeches and their metadata. The ParlaCAP dataset extends the ParlaMint dataset via the “text as data” paradigm by automatically coding topics and sentiment for each speech, simplifying the data to a tabular form, and thereby empowering social science research on agenda setting and negativity in political discourse across a broad set of parliaments. For automatic coding, multilingual transformer models were used, with the ParlaCAP model for topic, and the ParlaSent model for sentiment.
 
-              <a href="https://doi.org/10.1007/s10579-024-09798-w">Download</a> · <a href="#">Docs</a>
+              <a href="https://doi.org/10.23669/1ZTELP">Repository</a> · <a href="#">Documentation? Do we want something more accessible than the README deep in the repo?</a>
             </div>
           </li>
           <li>
-            <div class="item-title">Example Dataset B</div>
+            <div class="item-title">ParlaCAP fine-tuning data</div>
             <div class="item-meta">Parquet · ~1M rows</div>
             <div class="item-description">
-              Another key dataset with a one-line summary of coverage and purpose.
+              Will we publish the fine-tuning data? We could publish everything but the test data?
               <a href="#">Access</a>
             </div>
           </li>
@@ -316,23 +315,23 @@
       <section id="models">
         <h2>Models</h2>
         <p class="section-intro">
-          Pretrained models, baselines, and checkpoints provided by the project.
+          Multilingual models fine-tuned on the tasks of CAP topic schema classification and sentiment identification.
         </p>
         <ul class="item-list">
           <li>
-            <div class="item-title">Baseline Model</div>
+            <div class="item-title">ParlaCAP model</div>
             <div class="item-meta">Accuracy: 92% · Version 1.0</div>
             <div class="item-description">
-              A simple baseline suitable for getting started quickly.
-              <a href="#">Model card</a> · <a href="#">Weights</a>
+              ParlaCAP is a multilingual topic classification model for parliamentary speeches using the CAP schema, built by fine-tuning XLM-R-Parla on GPT-4o–annotated debates from multiple European parliaments. It achieves macro-F1 around 0.65–0.72 across English and South Slavic test sets.
+              <a href="https://huggingface.co/classla/ParlaCAP-Topic-Classifier">Model card</a> · <a href="#">Weights</a>
             </div>
           </li>
           <li>
-            <div class="item-title">Advanced Model</div>
+            <div class="item-title">ParlaSent model</div>
             <div class="item-meta">Accuracy: 97% · Version 2.1</div>
             <div class="item-description">
-              Higher-capacity model for production use or research.
-              <a href="#">Model card</a> · <a href="#">Weights</a>
+              This model is based on xlm-r-parla, an XLM-R-large model additionally pre-trained on parliamentary proceedings. The model was fine-tuned on the ParlaSent dataset, a manually annotated selection of sentences of parliamentary proceedings from Bosnia and Herzegovina, Croatia, Czechia, Serbia, Slovakia, Slovenia, and the United Kingdom.
+              <a href="https://huggingface.co/classla/xlm-r-parlasent">Model card</a> · <a href="#">Weights</a>
             </div>
           </li>
         </ul>
