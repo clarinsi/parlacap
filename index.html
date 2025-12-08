@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --bg-alt: #ffffff;
+      --text: #1f2933;
+      --accent: #2563eb;
+      --accent-soft: #e0ecff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Top navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 245, 247, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .nav-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Layout */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    section {
+      margin: 2.5rem 0;
+      padding: 1.5rem 1.25rem;
+      border-radius: 0.75rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+    }
+
+    section h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    section p.section-intro {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+
+    /* Hero / intro block */
+    .hero {
+      margin-top: 1.75rem;
+      margin-bottom: 2rem;
+      padding: 1.75rem 1.5rem;
+      border-radius: 1rem;
+      background: linear-gradient(
+        135deg,
+        rgba(37, 99, 235, 0.07),
+        rgba(79, 70, 229, 0.03)
+      );
+      border: 1px solid var(--border);
+    }
+
+    .hero-title {
+      font-size: 1.7rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 1rem;
+      color: #4b5563;
+      max-width: 40rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      font-size: 0.8rem;
+      color: #1d4ed8;
+      border: 1px solid rgba(37, 99, 235, 0.15);
+    }
+
+    /* Content lists */
+    .item-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem 1rem;
+    }
+
+    .item-list li {
+      padding: 0.75rem 0.75rem;
+      border-radius: 0.6rem;
+      border: 1px dashed var(--border);
+      background: #fafafa;
+      font-size: 0.9rem;
+    }
+
+    .item-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-meta {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-description {
+      font-size: 0.88rem;
+      color: #4b5563;
+    }
+
+    /* Events */
+    .event-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .event {
+      padding: 0.75rem 0.75rem;
+      border-radius: 0.6rem;
+      border: 1px dashed var(--border);
+      background: #fafafa;
+      font-size: 0.9rem;
+    }
+
+    .event-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .event-title {
+      font-weight: 600;
+    }
+
+    .event-date {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .event-location {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1rem 2rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: right;
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+
+      .hero {
+        padding: 1.25rem 1rem;
+      }
+
+      section {
+        padding: 1.25rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-title">Project Name</div>
+      <nav class="nav-links">
+        <a href="#data">Data</a>
+        <a href="#models">Models</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#events">Events</a>
+      </nav>
+    </div>
+  </header>
+
+    <main>
+      <section class="hero" id="top">
+        <h1 class="hero-title">Project Name</h1>
+        <p class="hero-subtitle">
+          One short sentence describing what this project does and why it matters.
+          Replace this text with a clear, user-focused description.
+        </p>
+        <div class="hero-meta">
+          <span class="tag">Open Source</span>
+          <span>Maintained by <strong>Your Org</strong></span>
+          <span><a href="https://github.com/your-org/your-repo">GitHub repo</a></span>
+        </div>
+      </section>
+
+      <section id="data">
+        <h2>Data</h2>
+        <p class="section-intro">
+          Datasets used or released by this project. Include links, formats, and
+          access instructions.
+        </p>
+        <ul class="item-list">
+          <li>
+            <div class="item-title">Example Dataset A</div>
+            <div class="item-meta">CSV · ~10K samples</div>
+            <div class="item-description">
+              Short description of what this dataset contains and how it can be used.
+              <a href="#">Download</a> · <a href="#">Docs</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Example Dataset B</div>
+            <div class="item-meta">Parquet · ~1M rows</div>
+            <div class="item-description">
+              Another key dataset with a one-line summary of coverage and purpose.
+              <a href="#">Access</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="models">
+        <h2>Models</h2>
+        <p class="section-intro">
+          Pretrained models, baselines, and checkpoints provided by the project.
+        </p>
+        <ul class="item-list">
+          <li>
+            <div class="item-title">Baseline Model</div>
+            <div class="item-meta">Accuracy: 92% · Version 1.0</div>
+            <div class="item-description">
+              A simple baseline suitable for getting started quickly.
+              <a href="#">Model card</a> · <a href="#">Weights</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Advanced Model</div>
+            <div class="item-meta">Accuracy: 97% · Version 2.1</div>
+            <div class="item-description">
+              Higher-capacity model for production use or research.
+              <a href="#">Model card</a> · <a href="#">Weights</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="tutorials">
+        <h2>Tutorials</h2>
+        <p class="section-intro">
+          Step-by-step guides, notebooks, and example workflows for using the project.
+        </p>
+        <ul class="item-list">
+          <li>
+            <div class="item-title">Getting Started</div>
+            <div class="item-meta">~10 minutes</div>
+            <div class="item-description">
+              Install the project, run your first example, and verify everything works.
+              <a href="#">View tutorial</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Training Your Own Model</div>
+            <div class="item-meta">~30 minutes · Jupyter notebook</div>
+            <div class="item-description">
+              Learn how to fine-tune models on your own data.
+              <a href="#">Open notebook</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Deploying to Production</div>
+            <div class="item-meta">~20 minutes</div>
+            <div class="item-description">
+              Example deployment pipeline and best practices.
+              <a href="#">Read guide</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="events">
+        <h2>Events</h2>
+        <p class="section-intro">
+          Upcoming and past events related to this project: talks, tutorials, and
+          community calls.
+        </p>
+        <ul class="event-list">
+          <li class="event">
+            <div class="event-header">
+              <span class="event-title">Monthly Community Call</span>
+              <span class="event-date">Next: 1st Thursday of each month</span>
+            </div>
+            <div class="event-location">Online · <a href="#">Join link</a></div>
+            <div>
+              Short agenda of what is covered and who should join.
+            </div>
+          </li>
+          <li class="event">
+            <div class="event-header">
+              <span class="event-title">Workshop: Building on Project Name</span>
+              <span class="event-date">March 15, 2025</span>
+            </div>
+            <div class="event-location">Conference XYZ · Room 101</div>
+            <div>
+              One-paragraph summary of the workshop and a link to slides or materials.
+              <a href="#">Slides</a> · <a href="#">Recording</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <span>
+        &copy; <span id="year"></span> Your Org ·
+        <a href="#top">Back to top</a>
+      </span>
+    </footer>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
