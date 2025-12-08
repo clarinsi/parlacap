@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Project Name</title>
+  <title>ParlaCAP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -263,7 +263,7 @@
 <body>
   <header>
     <div class="nav">
-      <div class="nav-title">Project Name</div>
+      <div class="nav-title">ParlaCAP</div>
       <nav class="nav-links">
         <a href="#data">Data</a>
         <a href="#models">Models</a>
@@ -275,14 +275,13 @@
 
     <main>
       <section class="hero" id="top">
-        <h1 class="hero-title">Project Name</h1>
+        <h1 class="hero-title">ParlaCAP</h1>
         <p class="hero-subtitle">
-          One short sentence describing what this project does and why it matters.
-          Replace this text with a clear, user-focused description.
+          The ParlaCAP project leverages advanced natural language processing to analyse political agendas and sentiments in debates from 27 European national parliaments. The automatic coding of agendas throughout a wide dataset of more than 7 million speeches, given in more than 20 languages, has become possible recently with significant developments in natural language processing and artificial intelligence, allowing for multilingual transformer models to provide both highly consistent and accurate codings. By integrating the ParlaMint dataset and the Comparative Agendas Project's coding scheme, the project will create a comprehensive, FAIR dataset for comparative political research, enhancing transparency and accountability in legislative discourse across Europe.
         </p>
         <div class="hero-meta">
           <span class="tag">Open Source</span>
-          <span>Maintained by <strong>Your Org</strong></span>
+          <span>Maintained by <strong>CLARIN.SI / CLASSLA</strong></span>
           <span><a href="https://github.com/your-org/your-repo">GitHub repo</a></span>
         </div>
       </section>
@@ -295,11 +294,12 @@
         </p>
         <ul class="item-list">
           <li>
-            <div class="item-title">Example Dataset A</div>
-            <div class="item-meta">CSV · ~10K samples</div>
+            <div class="item-title">ParlaCAP dataset v1</div>
+            <div class="item-meta">TSV files</div>
             <div class="item-description">
-              Short description of what this dataset contains and how it can be used.
-              <a href="#">Download</a> · <a href="#">Docs</a>
+              The ParlaCAP dataset consists of 8 million speeches from 28 European national and regional parliaments, with each speech coded with the sentiment expressed (ParlaSent coding from negative, over neutral, to positive) and the topic discussed (Comparative Agendas Project coding with 22 topics), and rich metadata on the speakers, parties and democracies. The dataset is an extension of the ParlaMint 5.0 dataset, which was primarily focused on the transcripts of parliamentary speeches and their metadata. The ParlaCAP dataset extends the ParlaMint dataset via the “text as data” paradigm by automatically coding topics and sentiment for each speech, simplifying the data to a tabular form, and thereby empowering social science research on agenda setting and negativity in political discourse across a broad set of parliaments. For automatic coding, multilingual transformer models were used, with the ParlaCAP model for topic, and the ParlaSent model for sentiment.
+
+              <a href="https://doi.org/10.1007/s10579-024-09798-w">Download</a> · <a href="#">Docs</a>
             </div>
           </li>
           <li>
