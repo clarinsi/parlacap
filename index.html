@@ -287,7 +287,7 @@
           ParlaCAP is an OSCARS Open Science cascading grant project. The project leverages advanced natural language processing to analyse political agendas and sentiments in debates from 28 European parliaments. The automatic coding of agendas throughout a wide dataset of more than 8 million speeches, given in more than 20 languages, has become possible recently with significant developments in natural language processing and artificial intelligence, allowing for multilingual transformer models to provide both highly consistent and accurate codings. By integrating the ParlaMint dataset and the Comparative Agendas Project's coding scheme, the project will create a comprehensive, FAIR dataset for comparative political research, enhancing transparency and accountability in legislative discourse across Europe.
         </p>
         <div>
-        <img style="width: 50%; display: inline-block;" src="https://oscars-project.eu/themes/custom/skeleton/logo.svg" />
+        <img style="width: 50%; display: inline-block; padding-right: 60px;" src="https://oscars-project.eu/themes/custom/skeleton/logo.svg">
         <img style="width: 25%; display: inline-block;" src="https://www.clarin.si/info/wp-content/uploads/2014/08/Clarin-SI-logo.png" />
         </div>
         <div class="hero-meta">
@@ -307,7 +307,7 @@
             <div class="item-title">ParlaCAP dataset v1</div>
             <div class="item-meta">TSV · 8M speeches</div>
             <div class="item-description">
-              The ParlaCAP dataset consists of 8 million speeches from 28 European national and regional parliaments, with each speech coded with the sentiment expressed (ParlaSent coding from negative, over neutral, to positive) and the topic discussed (Comparative Agendas Project coding with 22 topics), and rich metadata on the speakers, parties and democracies. The dataset is an extension of the <a href="http://hdl.handle.net/11356/2004">ParlaMint 5.0</a> dataset, which was primarily focused on the transcripts of parliamentary speeches and their metadata. The ParlaCAP dataset extends the ParlaMint dataset via the “text as data” paradigm by automatically coding topics and sentiment for each speech, simplifying the data to a tabular form, and thereby empowering social science research on agenda setting and negativity in political discourse across a broad set of parliaments.
+              The ParlaCAP dataset consists of 8 million speeches from 28 European national and regional parliaments, with each speech coded with the sentiment expressed (ParlaSent coding from negative, over neutral, to positive) and the topic discussed (<a href="https://www.comparativeagendas.net/pages/master-codebook">CAP (Comparative Agendas Project)</a> coding with 22 topics), and rich metadata on the speakers, parties and democracies. The dataset is an extension of the <a href="http://hdl.handle.net/11356/2004">ParlaMint 5.0</a> dataset, which was primarily focused on the transcripts of parliamentary speeches and their metadata. The ParlaCAP dataset extends the ParlaMint dataset via the “text as data” paradigm by automatically coding topics and sentiment for each speech, simplifying the data to a tabular form, and thereby empowering social science research on agenda setting and negativity in political discourse across a broad set of parliaments.
               <br>
               <a href="https://doi.org/10.23669/1ZTELP">Repository</a> · <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/blob/master/CAP_Conference_2025_Ljubesic_CAP_classification.pdf">More Information (Paper in Development)</a>
             </div>
@@ -316,7 +316,8 @@
             <div class="item-title">ParlaCAP fine-tuning data</div>
             <div class="item-meta">JSONL · 35,579 speeches</div>
             <div class="item-description">
-              The training dataset for the <a href="https://doi.org/10.57967/hf/6684">ParlaCAP topic classifier</a>. The dataset comprises approximately 36,000 parliamentary speeches in 29 languages from the <a href="http://hdl.handle.net/11356/1912">ParlaMint 4.1 corpus collection</a>, annotated with the topic labels by the GPT-4o model following the <a href="https://doi.org/10.1109/ACCESS.2025.3544814">LLM Teacher-Student Framework for development of training data and BERT-like classifiers without manually-annotated data</a>.
+              The training dataset for the <a href="https://doi.org/10.57967/hf/6684">ParlaCAP topic classifier</a>. The dataset comprises approximately 36,000 parliamentary speeches in 29 languages from the <a href="http://hdl.handle.net/11356/1912">ParlaMint 4.1 corpus collection</a>, annotated with the <a href="https://www.comparativeagendas.net/pages/master-codebook">CAP</a> topic labels by the GPT-4o model following the <a href="https://doi.org/10.1109/ACCESS.2025.3544814">LLM Teacher-Student Framework</a> for development of training data and BERT-like classifiers without manually-annotated data.
+              <br>
               <a href="">(TBA) Repository</a> · <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/blob/master/CAP_Conference_2025_Ljubesic_CAP_classification.pdf">More Information</a>
             </div>
           </li>
@@ -324,7 +325,8 @@
             <div class="item-title">ParlaCAP test data</div>
             <div class="item-meta">JSONL · 3,443 speeches</div>
             <div class="item-description">
-              The ParlaCAP test datasets comprise parliamentary speeches in Bosnian, Croatian, English, and Serbian, sourced from the <a href="http://hdl.handle.net/11356/1912">ParlaMint 4.1 dataset</a> and manually-annotated by a single expert annotator using the 21 CAP categories from the official CAP schema, along with an additional Other label. The datasets are approximately balanced across labels and languages with app. 800 instances per language. To prevent large language models from incorporating the test datasets during their training phase, the test datasets are not publicly available. However, we are happy to share them with interested researchers -- contact us to be granted access to the datasets.
+              The ParlaCAP test datasets comprise parliamentary speeches in Bosnian, Croatian, English, and Serbian, sourced from the <a href="http://hdl.handle.net/11356/1912">ParlaMint 4.1 dataset</a> and manually-annotated by a single expert annotator using the 21 CAP categories from the official <a href="https://www.comparativeagendas.net/pages/master-codebook">CAP</a> schema, along with an additional Other label. The datasets are approximately balanced across labels and languages with app. 800 instances per language. To prevent large language models from incorporating the test datasets during their training phase, the test datasets are not publicly available. However, we are happy to share them with interested researchers - contact us to be granted access to the datasets.
+              <br>
               <a href="https://classla-llm-benchmarks.streamlit.app/">Evaluation Dashboard</a> · <a href="https://arxiv.org/abs/2511.07989">More Information</a>
             </div>
           </li>
@@ -340,14 +342,14 @@
           <li>
             <div class="item-title">ParlaCAP model</div>
             <div class="item-description">
-              The ParlaCAP model is a multilingual text classification model that assigns topic categories to parliamentary speeches according to the <a href="https://www.comparativeagendas.net/pages/master-codebook">CAP (Comparative Agendas Project) schema</a>. The model was built by fine-tuning the <a href="10.57967/hf/6717">XLM-R-Parla</a> model on GPT-4o–annotated debates from multiple European parliaments. It achieves macro-F1 around 0.65–0.72 across English and South Slavic test sets.
+              The ParlaCAP model is a multilingual text classification model that assigns topic categories to parliamentary speeches according to the <a href="https://www.comparativeagendas.net/pages/master-codebook">CAP (Comparative Agendas Project) schema</a>. The model was built by fine-tuning the <a href="https://doi.org/10.57967/hf/6717">XLM-R-Parla</a> model on GPT-4o–annotated debates from multiple European parliaments. It achieves macro-F1 around 0.65–0.72 across English and South Slavic test sets.
               <a href="https://doi.org/10.57967/hf/6684">Model on Hugging Face</a>· <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/tree/master">Guide for Automatic CAP Annotation of ParlaMint Data</a>
             </div>
           </li>
           <li>
             <div class="item-title">ParlaSent model</div>
             <div class="item-description">
-              The ParlaSent model is a multilingual transformer model for sentiment analysis in parliamentary speeches. The model was developed by fine-tuning the <a href="10.57967/hf/6717">XLM-R-Parla</a> model on the <a href="http://hdl.handle.net/11356/1868">ParlaSent</a> dataset, a manually-annotated selection of sentences of parliamentary proceedings from Bosnia and Herzegovina, Croatia, Czechia, Serbia, Slovakia, Slovenia, and the United Kingdom. The model achieves high accuracy, with a mean absolute error of 0.68–0.71 in regression scenario, and macro-F1 scores of 0.70–0.73 when its outputs are mapped to the three sentiment categories (Positive, Neutral, Negative).
+              The ParlaSent model is a multilingual transformer model for sentiment analysis in parliamentary speeches. The model was developed by fine-tuning the <a href="https://doi.org/10.57967/hf/6717">XLM-R-Parla</a> model on the <a href="http://hdl.handle.net/11356/1868">ParlaSent</a> dataset, a manually-annotated selection of sentences of parliamentary proceedings from Bosnia and Herzegovina, Croatia, Czechia, Serbia, Slovakia, Slovenia, and the United Kingdom. The model achieves high accuracy, with a mean absolute error of 0.68–0.71 in regression scenario, and macro-F1 scores of 0.70–0.73 when its outputs are mapped to the three sentiment categories (Positive, Neutral, Negative).
               <a href="https://doi.org/10.57967/hf/6718">Model on Hugging Face</a> · <a href="https://aclanthology.org/2024.lrec-main.1393/">More Information</a>
             </div>
           </li>
@@ -361,27 +363,48 @@
         </p>
         <ul class="item-list">
           <li>
-            <div class="item-title">Getting Started</div>
-            <div class="item-meta">~10 minutes</div>
+            <div class="item-title">Parliamentary Speech Analysis with ParlaCAP</div>
+            <div class="item-meta">Python · Jupyter notebooks</div>
             <div class="item-description">
-              Install the project, run your first example, and verify everything works.
-              <a href="#">View tutorial</a>
+              Multiple tutorials for analyzing parliamentary speeches across multiple European countries using the python programming language. The 5 tutorial notebooks combine processing of ParlaMint data, sentiment analysis, party comparisons and cross-country analyses which enable students and researchers to study the tone and content of parliamentary debates systematically.
+              <a href="https://github.com/clarinsi/ParlaCAP-Analysis-Tutorials/tree/main">View tutorial</a>
             </div>
           </li>
           <li>
-            <div class="item-title">Training Your Own Model</div>
-            <div class="item-meta">~30 minutes · Jupyter notebook</div>
+            <div class="item-title">Parliamentary Speech Analysis with ParlaCAP</div>
+            <div class="item-meta">R · Jupyter notebook</div>
             <div class="item-description">
-              Learn how to fine-tune models on your own data.
-              <a href="#">Open notebook</a>
+             Multiple tutorials for analyzing parliamentary speeches across multiple European countries using the R programming language.
+              <a href="#">TBA</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <p class="section-intro">
+          Publications connected with the ParlaCAP project.
+        </p>
+        <ul class="item-list">
+          <li>
+            <div class="item-title">Title, Authors</div>
+              <a href="">Read more</a>
             </div>
           </li>
           <li>
-            <div class="item-title">Deploying to Production</div>
-            <div class="item-meta">~20 minutes</div>
-            <div class="item-description">
-              Example deployment pipeline and best practices.
-              <a href="#">Read guide</a>
+            <div class="item-title">Title, Authors</div>
+              <a href="">Read more</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Title, Authors</div>
+              <a href="">Read more</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Title, Authors</div>
+              <a href="">Read more</a>
             </div>
           </li>
         </ul>
@@ -390,8 +413,7 @@
       <section id="events">
         <h2>Events</h2>
         <p class="section-intro">
-          Upcoming and past events related to this project: talks, tutorials, and
-          community calls.
+          Upcoming and past events related to this project: talks and workshops.
         </p>
         <ul class="event-list">
           <li class="event">
@@ -415,7 +437,7 @@
             <div>
               Taja Kuzman Pungeršek: ParlaCAP - Primerjava tematskih prioritet v parlamentih na podlagi korpusov ParlaMint
               <br/>
-              <a href="https://mrezaznanja.si/odprta-znanost-2025/">Event</a> · <a href="https://video.arnes.si/watch/xdtbdzrbljkr">Recording</a>
+              <a href="https://www.clarin.si/info/wp-content/uploads/2025/11/odprta-znanost-Stevilka-predavanja_Kuzman_Pungersek_Taja_ParlaCAP_Arnes_2025.pdf">Slides</a> · <a href="https://video.arnes.si/watch/xdtbdzrbljkr">Recording</a>
             </div>
           </li>
           <li class="event">
@@ -428,7 +450,7 @@
               Nikola Ljubešić, Taja Kuzman Pungeršek: ParlaCAP - Mining the ParlaMint Treasures with Multilingual Topic and Sentiment Classification
               
               <br/>
-              <a href="https://www.clarin.eu/content/bazaar-clarin2025">Event</a> · <a href="#">Poster?</a>
+              <a href="https://www.clarin.eu/content/bazaar-clarin2025">Event</a> · <a href="https://www.clarin.eu/media/9224">Poster</a>
             </div>
           </li>
           <li class="event">
@@ -516,6 +538,52 @@
           </li>
         </ul>
       </section>
+
+      <section id="partners">
+        <h2>Partners</h2>
+        <p class="section-intro">
+          Partners in the ParlaCAP project
+        </p>
+        <ul class="item-list">
+          <li>
+            <div class="item-title">Partner</div>
+            <div class="item-description">
+                  Description
+              <a href="">Link</a>
+            </div>
+          </li>
+                    <li>
+            <div class="item-title">Partner</div>
+            <div class="item-description">
+                  Description
+              <a href="">Link</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Partner</div>
+            <div class="item-description">
+                  Description
+              <a href="">Link</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Partner</div>
+            <div class="item-description">
+                  Description
+              <a href="">Link</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Partner</div>
+            <div class="item-description">
+                  Description
+              <a href="">Link</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+
     </main>
 
     <footer>
