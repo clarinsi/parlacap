@@ -286,9 +286,9 @@
         </p>
         <img width="50%" src="https://oscars-project.eu/themes/custom/skeleton/logo.svg"/>
         <div class="hero-meta">
-          <span class="tag">Open Source</span>
-          <span>Maintained by <strong>CLARIN.SI / CLASSLA</strong></span>
-          <span><a href="https://github.com/your-org/your-repo">GitHub repo</a></span>
+          <!-- This is a comment <span class="tag">Open Source</span>-->
+          <span>Maintained by <strong>CLARIN.SI/CLASSLA</strong></span>
+          <!--<span><a href="https://github.com/your-org/your-repo">GitHub repo</a></span>-->
           <img width="25%" src="https://www.clarin.si/info/wp-content/uploads/2014/08/Clarin-SI-logo.png"/>
         </div>
       </section>
@@ -309,10 +309,18 @@
           </li>
           <li>
             <div class="item-title">ParlaCAP fine-tuning data</div>
-            <div class="item-meta">Parquet · ~1M rows</div>
+            <div class="item-meta">JSONL · 35,579 speeches</div>
             <div class="item-description">
-              Will we publish the fine-tuning data? We could publish everything but the test data?
-              <a href="#">Access</a>
+              The training dataset for the <a href="https://doi.org/10.57967/hf/6684">ParlaCAP topic classifier</a>. The dataset comprises approximately 36,000 parliamentary speeches in 29 languages from the <a href="http://hdl.handle.net/11356/1912">ParlaMint 4.1 corpus collection</a>, annotated with the topic labels by the GPT-4o model following the <a href="https://doi.org/10.1109/ACCESS.2025.3544814">LLM Teacher-Student Framework for development of training data and BERT-like classifiers without manually-annotated data</a>.
+              <a href="">(TBA) Repository</a> · <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/blob/master/CAP_Conference_2025_Ljubesic_CAP_classification.pdf">More Information</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">ParlaCAP test data</div>
+            <div class="item-meta">JSONL · 3,443 speeches</div>
+            <div class="item-description">
+              The ParlaCAP test datasets comprise parliamentary speeches in Bosnian, Croatian, English, and Serbian, sourced from the <a href="http://hdl.handle.net/11356/1912">ParlaMint 4.1 dataset</a> and manually-annotated by a single expert annotator using the 21 CAP categories from the official CAP schema, along with an additional Other label. The datasets are approximately balanced across labels and languages with app. 800 instances per language. To prevent large language models from incorporating the test datasets during their training phase, the test datasets are not publicly available. However, we are happy to share them with interested researchers -- contact us to be granted access to the datasets.
+              <a href="https://classla-llm-benchmarks.streamlit.app/">Evaluation Dashboard</a> · <a href="https://arxiv.org/abs/2511.07989">More Information</a>
             </div>
           </li>
         </ul>
@@ -326,18 +334,16 @@
         <ul class="item-list">
           <li>
             <div class="item-title">ParlaCAP model</div>
-            <div class="item-meta">Accuracy: 92% · Version 1.0</div>
             <div class="item-description">
-              ParlaCAP is a multilingual topic classification model for parliamentary speeches using the CAP schema, built by fine-tuning XLM-R-Parla on GPT-4o–annotated debates from multiple European parliaments. It achieves macro-F1 around 0.65–0.72 across English and South Slavic test sets.
-              <a href="https://huggingface.co/classla/ParlaCAP-Topic-Classifier">Model card</a> · <a href="#">Weights</a>
+              The ParlaCAP model is a multilingual text classification model that assigns topic categories to parliamentary speeches according to the <a href="https://www.comparativeagendas.net/pages/master-codebook">CAP (Comparative Agendas Project) schema</a>. The model was built by fine-tuning the <a href="10.57967/hf/6717">XLM-R-Parla</a> model on GPT-4o–annotated debates from multiple European parliaments. It achieves macro-F1 around 0.65–0.72 across English and South Slavic test sets.
+              <a href="https://doi.org/10.57967/hf/6684">Model on Hugging Face</a>· <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/tree/master">Guide for Automatic CAP Annotation of ParlaMint Data</a>
             </div>
           </li>
           <li>
             <div class="item-title">ParlaSent model</div>
-            <div class="item-meta">Accuracy: 97% · Version 2.1</div>
             <div class="item-description">
-              This model is based on xlm-r-parla, an XLM-R-large model additionally pre-trained on parliamentary proceedings. The model was fine-tuned on the ParlaSent dataset, a manually annotated selection of sentences of parliamentary proceedings from Bosnia and Herzegovina, Croatia, Czechia, Serbia, Slovakia, Slovenia, and the United Kingdom.
-              <a href="https://huggingface.co/classla/xlm-r-parlasent">Model card</a> · <a href="#">Weights</a>
+              The ParlaSent model is a multilingual transformer model for sentiment analysis in parliamentary speeches. The model was developed by fine-tuning the <a href="10.57967/hf/6717">XLM-R-Parla</a> model on the <a href="http://hdl.handle.net/11356/1868">ParlaSent</a> dataset, a manually-annotated selection of sentences of parliamentary proceedings from Bosnia and Herzegovina, Croatia, Czechia, Serbia, Slovakia, Slovenia, and the United Kingdom. The model achieves high accuracy, with a mean absolute error of 0.68–0.71 in regression scenario, and macro-F1 scores of 0.70–0.73 when its outputs are mapped to the three sentiment categories (Positive, Neutral, Negative).
+              <a href="https://doi.org/10.57967/hf/6718">Model on Hugging Face</a> · <a href="https://aclanthology.org/2024.lrec-main.1393/">More Information</a>
             </div>
           </li>
         </ul>
