@@ -273,7 +273,9 @@
         <a href="#data">Data</a>
         <a href="#models">Models</a>
         <a href="#tutorials">Tutorials</a>
+        <a href="#publications">Publications</a>
         <a href="#events">Events</a>
+        <a href="#partners">Partners</a>
       </nav>
     </div>
   </header>
@@ -284,12 +286,14 @@
         <p class="hero-subtitle">
           ParlaCAP is an OSCARS Open Science cascading grant project. The project leverages advanced natural language processing to analyse political agendas and sentiments in debates from 28 European parliaments. The automatic coding of agendas throughout a wide dataset of more than 8 million speeches, given in more than 20 languages, has become possible recently with significant developments in natural language processing and artificial intelligence, allowing for multilingual transformer models to provide both highly consistent and accurate codings. By integrating the ParlaMint dataset and the Comparative Agendas Project's coding scheme, the project will create a comprehensive, FAIR dataset for comparative political research, enhancing transparency and accountability in legislative discourse across Europe.
         </p>
-        <img width="50%" src="https://oscars-project.eu/themes/custom/skeleton/logo.svg"/>
+        <div>
+        <img style="width: 50%; display: inline-block;" src="https://oscars-project.eu/themes/custom/skeleton/logo.svg" />
+        <img style="width: 25%; display: inline-block;" src="https://www.clarin.si/info/wp-content/uploads/2014/08/Clarin-SI-logo.png" />
+        </div>
         <div class="hero-meta">
           <!-- This is a comment <span class="tag">Open Source</span>-->
           <span>Maintained by <strong>CLARIN.SI/CLASSLA</strong></span>
           <!--<span><a href="https://github.com/your-org/your-repo">GitHub repo</a></span>-->
-          <img width="25%" src="https://www.clarin.si/info/wp-content/uploads/2014/08/Clarin-SI-logo.png"/>
         </div>
       </section>
 
@@ -301,10 +305,11 @@
         <ul class="item-list">
           <li>
             <div class="item-title">ParlaCAP dataset v1</div>
-            <div class="item-meta">TSV files</div>
+            <div class="item-meta">TSV · 8M speeches</div>
             <div class="item-description">
-              The ParlaCAP dataset consists of 8 million speeches from 28 European national and regional parliaments, with each speech coded with the sentiment expressed (ParlaSent coding from negative, over neutral, to positive) and the topic discussed (Comparative Agendas Project coding with 22 topics), and rich metadata on the speakers, parties and democracies. The dataset is an extension of the ParlaMint 5.0 dataset, which was primarily focused on the transcripts of parliamentary speeches and their metadata. The ParlaCAP dataset extends the ParlaMint dataset via the “text as data” paradigm by automatically coding topics and sentiment for each speech, simplifying the data to a tabular form, and thereby empowering social science research on agenda setting and negativity in political discourse across a broad set of parliaments. For automatic coding, multilingual transformer models were used, with the ParlaCAP model for topic, and the ParlaSent model for sentiment.
-              <a href="https://doi.org/10.23669/1ZTELP">Repository</a> · <a href="#">Documentation? Do we want something more accessible than the README deep in the repo?</a>
+              The ParlaCAP dataset consists of 8 million speeches from 28 European national and regional parliaments, with each speech coded with the sentiment expressed (ParlaSent coding from negative, over neutral, to positive) and the topic discussed (Comparative Agendas Project coding with 22 topics), and rich metadata on the speakers, parties and democracies. The dataset is an extension of the <a href="http://hdl.handle.net/11356/2004">ParlaMint 5.0</a> dataset, which was primarily focused on the transcripts of parliamentary speeches and their metadata. The ParlaCAP dataset extends the ParlaMint dataset via the “text as data” paradigm by automatically coding topics and sentiment for each speech, simplifying the data to a tabular form, and thereby empowering social science research on agenda setting and negativity in political discourse across a broad set of parliaments.
+              <br>
+              <a href="https://doi.org/10.23669/1ZTELP">Repository</a> · <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/blob/master/CAP_Conference_2025_Ljubesic_CAP_classification.pdf">More Information (Paper in Development)</a>
             </div>
           </li>
           <li>
