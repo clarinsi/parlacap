@@ -291,23 +291,31 @@
         <img style="width: 25%; display: inline-block;" src="https://www.clarin.si/info/wp-content/uploads/2014/08/Clarin-SI-logo.png" />
         </div>
         <div class="hero-meta">
+          <span>Project start date: 1 January 2025</span>
+          <span>Project duration: 24 months</span>
+        </div>
+        <div class="hero-meta">
           <!-- This is a comment <span class="tag">Open Source</span>-->
-          <span>Maintained by <strong>CLARIN.SI/CLASSLA</strong></span>
+          <span>See also the project description at the <a href="https://oscars-project.eu/projects/parlacap-comparing-agenda-settings-across-parliaments-parlamint-dataset"><strong>OSCARS website</strong></a>.</span>
           <!--<span><a href="https://github.com/your-org/your-repo">GitHub repo</a></span>-->
         </div>
+
+        <p style="font-size: 0.8rem;"><i>This project is funded by the OSCARS project's cascading grant, which has received funding from the European Commission’s Horizon Europe Research and Innovation programme under grant agreement No. 101129751.</i></p>
       </section>
+
+
 
       <section id="data">
         <h2>Data</h2>
         <p class="section-intro">
-          The ParlaCAP dataset and supporting fine-tuning data that allowed for building the ParlaCAP dataset.
+          The ParlaCAP dataset and other freely-available datasets related to the ParlaCAP project.
         </p>
         <ul class="item-list">
           <li>
             <div class="item-title">ParlaCAP dataset v1</div>
             <div class="item-meta">TSV · 8M speeches</div>
             <div class="item-description">
-              The ParlaCAP dataset consists of 8 million speeches from 28 European national and regional parliaments, with each speech coded with the sentiment expressed (ParlaSent coding from negative, over neutral, to positive) and the topic discussed (<a href="https://www.comparativeagendas.net/pages/master-codebook">CAP (Comparative Agendas Project)</a> coding with 22 topics), and rich metadata on the speakers, parties and democracies. The dataset is an extension of the <a href="http://hdl.handle.net/11356/2004">ParlaMint 5.0</a> dataset, which was primarily focused on the transcripts of parliamentary speeches and their metadata. The ParlaCAP dataset extends the ParlaMint dataset via the “text as data” paradigm by automatically coding topics and sentiment for each speech, simplifying the data to a tabular form, and thereby empowering social science research on agenda setting and negativity in political discourse across a broad set of parliaments.
+              The ParlaCAP dataset consists of 8 million speeches from 28 European national and regional parliaments, with each speech coded with the sentiment expressed (ParlaSent coding from negative, over neutral, to positive) and the topic discussed (<a href="https://www.comparativeagendas.net/pages/master-codebook">CAP (Comparative Agendas Project)</a> coding with 22 topics), and rich metadata on the speakers, parties and democracies. The ParlaCAP dataset extends the <a href="http://hdl.handle.net/11356/2004">ParlaMint 5.0</a> dataset by automatically coding topics and sentiment for each speech and simplifying the data to a tabular form.
               <br>
               <a href="https://doi.org/10.23669/1ZTELP">Repository</a> · <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/blob/master/CAP_Conference_2025_Ljubesic_CAP_classification.pdf">More Information (Paper in Development)</a>
             </div>
@@ -343,14 +351,19 @@
             <div class="item-title">ParlaCAP model</div>
             <div class="item-description">
               The ParlaCAP model is a multilingual text classification model that assigns topic categories to parliamentary speeches according to the <a href="https://www.comparativeagendas.net/pages/master-codebook">CAP (Comparative Agendas Project) schema</a>. The model was built by fine-tuning the <a href="https://doi.org/10.57967/hf/6717">XLM-R-Parla</a> model on GPT-4o–annotated debates from multiple European parliaments. It achieves macro-F1 around 0.65–0.72 across English and South Slavic test sets.
-              <a href="https://doi.org/10.57967/hf/6684">Model on Hugging Face</a>· <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/tree/master">Guide for Automatic CAP Annotation of ParlaMint Data</a>
+			  <br>
+              <a href="https://doi.org/10.57967/hf/6684">Model on Hugging Face</a>
+			  <br><a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/tree/master">Guide for Automatic CAP Annotation of ParlaMint Data</a>
             </div>
           </li>
           <li>
             <div class="item-title">ParlaSent model</div>
             <div class="item-description">
               The ParlaSent model is a multilingual transformer model for sentiment analysis in parliamentary speeches. The model was developed by fine-tuning the <a href="https://doi.org/10.57967/hf/6717">XLM-R-Parla</a> model on the <a href="http://hdl.handle.net/11356/1868">ParlaSent</a> dataset, a manually-annotated selection of sentences of parliamentary proceedings from Bosnia and Herzegovina, Croatia, Czechia, Serbia, Slovakia, Slovenia, and the United Kingdom. The model achieves high accuracy, with a mean absolute error of 0.68–0.71 in regression scenario, and macro-F1 scores of 0.70–0.73 when its outputs are mapped to the three sentiment categories (Positive, Neutral, Negative).
-              <a href="https://doi.org/10.57967/hf/6718">Model on Hugging Face</a> · <a href="https://aclanthology.org/2024.lrec-main.1393/">More Information</a>
+              <br>
+              <a href="https://doi.org/10.57967/hf/6718">Model on Hugging Face</a>
+              <br>
+              <a href="https://aclanthology.org/2024.lrec-main.1393/">More Information</a>
             </div>
           </li>
         </ul>
@@ -359,7 +372,7 @@
       <section id="tutorials">
         <h2>Tutorials</h2>
         <p class="section-intro">
-          Step-by-step guides, notebooks, and example workflows for using the project.
+          Step-by-step guides for using the ParlaCAP dataset.
         </p>
         <ul class="item-list">
           <li>
@@ -386,27 +399,57 @@
         <p class="section-intro">
           Publications connected with the ParlaCAP project.
         </p>
-        <ul class="item-list">
-          <li>
-            <div class="item-title">Title, Authors</div>
-              <a href="">Read more</a>
+        <ul class="event-list">
+          <li class="event">
+            <div class="event-header">
+              <span class="event-title">State of the Art in Text Classification for South Slavic Languages: Fine-Tuning or Prompting?</span>
+              <span class="event-date">November 2025</span>
+            </div>
+            <div class="event-location">arXiv; submitted to LREC 2026</div>
+            <div>
+              Taja Kuzman Pungeršek, Peter Rupnik, Ivan Porupski, Vuk Dinić, Nikola Ljubešić
+              <br/>
+              <a href="https://arxiv.org/abs/2511.07989">Conference Paper</a>
             </div>
           </li>
-          <li>
-            <div class="item-title">Title, Authors</div>
-              <a href="">Read more</a>
+          <li class="event">
+            <div class="event-header">
+              <span class="event-title">Parlasent: mapping sentiment in political discourse with large language models</span>
+              <span class="event-date">June 2025</span>
+            </div>
+            <div class="event-location">Political Research Exchange, 7(1)</div>
+            <div>
+              Michal Mochtak, Peter Rupnik, Taja Kuzman, Nikola Ljubešić
+              <br/>
+              <a href="https://doi.org/10.1080/2474736X.2025.2508377">Research Note</a>
             </div>
           </li>
-          <li>
-            <div class="item-title">Title, Authors</div>
-              <a href="">Read more</a>
+          <li class="event">
+            <div class="event-header">
+              <span class="event-title">ParlaCAP: Comparing Agenda-setting across Parliaments via the ParlaMint dataset</span>
+              <span class="event-date">June 2025</span>
+            </div>
+            <div class="event-location"><a href="https://www.polver.uni-konstanz.de/cap2025/">Annual Conference of the Comparative Agendas Project (CAP) 2025</a></div>
+            <div>
+              Nikola Ljubešić, Taja Kuzman Pungeršek, Daniela Širinić
+              <br/>
+              <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/blob/master/CAP_Conference_2025_Ljubesic_CAP_classification.pdf">Conference Paper</a>
             </div>
           </li>
-          <li>
-            <div class="item-title">Title, Authors</div>
-              <a href="">Read more</a>
+		  <!----
+          <li class="event">
+            <div class="event-header">
+              <span class="event-title">Title</span>
+              <span class="event-date">Date</span>
+            </div>
+            <div class="event-location">Venue/Journal</div>
+            <div>
+              Authors
+              <br/>
+              <a href="">Link</a>
             </div>
           </li>
+		  ---->
         </ul>
       </section>
 
@@ -425,7 +468,7 @@
             <div>
               Anna Kryvenko, Kristina Pahor de Maiti Tekavčič: ParlaMint – An introduction to Multilingual Parliamentary Data
               <br/>
-              <a href="https://cdh.uu.nl/event/cdh-clarin-workshop-parlamint-an-introduction-to-multilingual-parliamentary-data/">Event</a> · <a href="#">Materials?</a>
+              <a href="https://cdh.uu.nl/event/cdh-clarin-workshop-parlamint-an-introduction-to-multilingual-parliamentary-data/">Event</a> <!-- ·  <a href="#">Materials?</a> -->
             </div>
           </li>
           <li class="event">
@@ -463,7 +506,7 @@
               Darja Fišer, Anna Kryvenko, Kristina Pahor de Maiti Tekavčič: From the Dispatch Box - Unlocking Topics and Sentiments in Multilingual ParlaMint Corpora
               
               <br/>
-              <a href="https://dh2025.adho.org/browse-the-program-agenda/">Event</a> · <a href="#">Materials?</a>
+              <a href="https://dh2025.adho.org/browse-the-program-agenda/">Event</a> <!-- · <a href="#">Materials?</a> -->
             </div>
           </li>
           <li class="event">
@@ -487,7 +530,7 @@
             <div>
               Presentation of the project was given by Tomaž Erjavec
               <br/>
-              <a href="#">Slides?</a>
+             <!-- <a href="#">Slides?</a> -->
             </div>
           </li> 
           <li class="event">
@@ -499,7 +542,7 @@
             <div>
               Nikola Ljubešić, Taja Kuzman: ParlaCAP - Comparing agenda settings across parliaments via the ParlaMint dataset
               <br/>
-              <a href="https://www.clarin.eu/content/bazaar-clarin2024">Event</a> · <a href="#">Poster?</a>
+              <a href="https://www.clarin.eu/content/bazaar-clarin2024">Event</a> · <a href="https://www.clarin.eu/media/8754">Poster</a>
             </div>
           </li>
           <li class="event">
@@ -511,7 +554,7 @@
             <div>
               Nikola Ljubešić: ParlaCAP - Comparing agenda settings across parliaments via the ParlaMint dataset
               <br/>
-              <a href="https://sites.google.com/view/cpss2024konvens/home-page">Event</a> · <a href="#">Poster?</a>
+              <a href="https://sites.google.com/view/cpss2024konvens/home-page">Event</a> <!-- · <a href="#">Poster?</a> -->
             </div>
           </li>
           <li class="event">
@@ -522,7 +565,8 @@
             <div class="event-location">Vienna, Austria</div>
             <div>
               Nikola Ljubešić: Revealing the Hidden Treasures of Parliamentary Proceedings with NLP
-              <a href="https://events.ceu.edu/2024-09-11/revealing-hidden-treasures-parliamentary-proceedings-nlp">Event</a> · <a href="#">Presentation?</a>
+			  <br/>
+              <a href="https://events.ceu.edu/2024-09-11/revealing-hidden-treasures-parliamentary-proceedings-nlp">Event</a> <!--- · <a href="#">Presentation?</a> -->
             </div>
           </li>
           <li class="event">
@@ -533,7 +577,8 @@
             <div class="event-location">Vienna, Austria</div>
             <div>
               Nikola Ljubešić: ParlaMint - How recent developments in NLP help us reveal the hidden treasures of parliamentary proceedings
-              <a href="https://clariah.at/en/events/acdh-ch-research-lunch-nikola-ljubesic/">Event</a> · <a href="#">Presentation?</a>
+			  <br/>
+              <a href="https://clariah.at/en/events/acdh-ch-research-lunch-nikola-ljubesic/">Event</a> <!--- · <a href="#">Presentation?</a> -->
             </div>
           </li>
         </ul>
@@ -541,43 +586,52 @@
 
       <section id="partners">
         <h2>Partners</h2>
-        <p class="section-intro">
-          Partners in the ParlaCAP project
-        </p>
         <ul class="item-list">
           <li>
-            <div class="item-title">Partner</div>
-            <div class="item-description">
-                  Description
-              <a href="">Link</a>
-            </div>
-          </li>
-                    <li>
-            <div class="item-title">Partner</div>
-            <div class="item-description">
-                  Description
-              <a href="">Link</a>
+            <div class="item-title">Jožef Stefan Institute</div>
+            <div class="item-description" style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                The Jožef Stefan Institute (JSI) is the leading Slovenian scientific research institute, covering a broad spectrum of basic and applied research in natural sciences, life sciences and engineering. ParlaCAP project members come from the <a href="https://kt.ijs.si/">Department of Knowledge Technologies</a>, <a href="https://www.clarin.si/info/about/">the CLARIN.SI infrastructure</a>, and <a href="https://www.clarin.si/info/k-centre/">the CLASSLA knowledge centre</a>, all located inside the JSI.
+                <h4>Project Participants: </h4> Nikola Ljubešić, Tomaž Erjavec, Taja Kuzman Pungeršek, Peter Rupnik
+              </div>
+              <!-- <img src="https://ijs.si/ijsw/Rubrike?action=AttachFile&do=get&target=000-modra.jpg" alt="Jožef Stefan Institute Logo" style="max-width: 100px; height: auto;"> -->
             </div>
           </li>
           <li>
-            <div class="item-title">Partner</div>
+            <div class="item-title">Institute for Contemporary History</div>
             <div class="item-description">
-                  Description
-              <a href="">Link</a>
+              The <a href="https://inz.si/en/">Institute for Contemporary History (INZ)</a> is the central and largest specialised research organisation in the field of contemporary history in the Republic of Slovenia. It conducts research on Slovenian history from the 19th century onwards.
+              <h4>Project Participants: </h4> Katja Meden, Jure Skubic, Anna Kryvenko
             </div>
           </li>
           <li>
-            <div class="item-title">Partner</div>
+            <div class="item-title">Faculty of Political Science, University of Zagreb</div>
             <div class="item-description">
-                  Description
-              <a href="">Link</a>
+              As the oldest Faculty of Political Science in Central, Eastern and South-East Europe, offering political science program since 1962, <a href="https://www.fpzg.unizg.hr/en/about_us">Faculty of Political Science</a> is an academic institution whose mission is acquisition and transfer of knowledge about Croatian state and politics, society, media and its international environment.
+			  <h4>Project Participant: </h4> Daniela Širinić
             </div>
           </li>
           <li>
-            <div class="item-title">Partner</div>
+            <div class="item-title">Bulgarian Academy of Sciences</div>
             <div class="item-description">
-                  Description
-              <a href="">Link</a>
+              The <a href="https://www.bas.bg/?lang=en">Bulgarian Academy of Sciences</a> is the leading scientific institution in Bulgaria, advancing research in natural, social, and humanities sciences.
+			<h4>Project Participant: </h4> Petya Osenova
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Polish Academy of Sciences</div>
+            <div class="item-description">
+              Since 1952, the <a href="https://pan.pl/en/">Polish Academy of Sciences</a> has conducted internationally renowned research in almost all fields. It builds, educates and supports a community of scholars. It provides and promotes fact-based knowledge. In this way, it serves society.
+			<h4>Project Participants: </h4> Maciej Ogrodniczuk, Łukasz Kobyliński
+            </div>
+          </li>
+          <li>
+            <div class="item-title">External Collaborators</div>
+            <div class="item-description">
+			<ul>
+			<li> Michal Mochtak (Radboud University)</li>
+			<li> Matyáš Kopp (Institute of Formal and Applied Linguistics) </li>
+			</ul>
             </div>
           </li>
         </ul>
