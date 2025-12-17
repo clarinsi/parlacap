@@ -248,6 +248,20 @@
       text-align: right;
     }
 
+    .item-list.grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .item-list.grid-2x2 > li {
+      display: flex;
+      flex-direction: column;
+    }
+
     @media (max-width: 640px) {
       .nav {
         flex-direction: column;
@@ -276,6 +290,7 @@
         <a href="#publications">Publications</a>
         <a href="#events">Events</a>
         <a href="#partners">Partners</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -300,11 +315,11 @@
         </div>
 
         <p style="font-size: 0.8rem;"><i>This project is funded by the OSCARS project's cascading grant, which has received funding from the European Commission’s Horizon Europe Research and Innovation programme under grant agreement No. 101129751.</i></p>
-      	<div class="hero-meta">
-		  <span>Operated by</span>
-		  <img style="width: 25%; display: inline-block;" src="https://www.clarin.si/info/wp-content/uploads/2014/08/Clarin-SI-logo.png" />
-		</div>
-	  </section>
+         <div class="hero-meta">
+        <span>Operated by</span>
+        <img style="width: 25%; display: inline-block;" src="https://www.clarin.si/info/wp-content/uploads/2014/08/Clarin-SI-logo.png" />
+      </div>
+     </section>
 
 
 
@@ -313,14 +328,24 @@
         <p class="section-intro">
           The ParlaCAP dataset and other freely-available datasets related to the ParlaCAP project.
         </p>
-        <ul class="item-list">
+        <ul class="item-list grid-2x2">
           <li>
-            <div class="item-title">ParlaCAP dataset v1</div>
+            <div class="item-title">ParlaCAP 1.0 dataset</div>
             <div class="item-meta">TSV · 8M speeches</div>
             <div class="item-description">
               The ParlaCAP dataset consists of 8 million speeches from 28 European national and regional parliaments, with each speech coded with the sentiment expressed (ParlaSent coding from negative, over neutral, to positive) and the topic discussed (<a href="https://www.comparativeagendas.net/pages/master-codebook">CAP (Comparative Agendas Project)</a> coding with 22 topics), and rich metadata on the speakers, parties and democracies. The ParlaCAP dataset extends the <a href="http://hdl.handle.net/11356/2004">ParlaMint 5.0</a> dataset by automatically coding topics and sentiment for each speech and simplifying the data to a tabular form.
               <br>
               <a href="https://doi.org/10.23669/1ZTELP">Repository</a> · <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/blob/master/CAP_Conference_2025_Ljubesic_CAP_classification.pdf">More Information (Paper in Development)</a>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">ParlaMint 5.0 corpus collection</div>
+            <div class="item-meta">TEI XML, TSV, CoNLL-U  · 1.2B words, 8M speeches</div>
+            <div class="item-description">
+              ParlaMint 5.0 is a collection of comparable corpora of parliamentary debates from 29 European countries and regions. The corpora are richly annotated with metadata on speakers and parties, and automatically assigned CAP top-level topics and sentiment information. While ParlaMint 5.0 and ParlaCAP 1.0 provide the same underlying data, ParlaMint is distributed in formats primarily intended for corpus linguistics research, whereas ParlaCAP is provided in simplified, analysis-ready formats that are more accessible to social scientists and other digital humanities researchers.
+              <br>
+              <a href="http://hdl.handle.net/11356/2004">Repository</a> · <a href="https://www.clarin.si/ske/#dashboard?corpname=parlamint50_xx_en">Concordancer</a> · 
+              <a href="https://doi.org/10.1007/s10579-024-09798-w">More Information</a>
             </div>
           </li>
           <li>
@@ -354,9 +379,9 @@
             <div class="item-title">ParlaCAP model</div>
             <div class="item-description">
               The ParlaCAP model is a multilingual text classification model that assigns topic categories to parliamentary speeches according to the <a href="https://www.comparativeagendas.net/pages/master-codebook">CAP (Comparative Agendas Project) schema</a>. The model was built by fine-tuning the <a href="https://doi.org/10.57967/hf/6717">XLM-R-Parla</a> model on GPT-4o–annotated debates from multiple European parliaments. It achieves macro-F1 around 0.65–0.72 across English and South Slavic test sets.
-			  <br>
+           <br>
               <a href="https://doi.org/10.57967/hf/6684">Model on Hugging Face</a>
-			  <br><a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/tree/master">Guide for Automatic CAP Annotation of ParlaMint Data</a>
+           <br><a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/tree/master">Guide for Automatic CAP Annotation of ParlaMint Data</a>
             </div>
           </li>
           <li>
@@ -439,7 +464,7 @@
               <a href="https://github.com/clarinsi/ParlaMint-Annotation-with-CAP-Topics/blob/master/CAP_Conference_2025_Ljubesic_CAP_classification.pdf">Conference Paper</a>
             </div>
           </li>
-		  <!----
+        <!----
           <li class="event">
             <div class="event-header">
               <span class="event-title">Title</span>
@@ -452,7 +477,7 @@
               <a href="">Link</a>
             </div>
           </li>
-		  ---->
+        ---->
         </ul>
       </section>
 
@@ -568,7 +593,7 @@
             <div class="event-location">Vienna, Austria</div>
             <div>
               Nikola Ljubešić: Revealing the Hidden Treasures of Parliamentary Proceedings with NLP
-			  <br/>
+           <br/>
               <a href="https://events.ceu.edu/2024-09-11/revealing-hidden-treasures-parliamentary-proceedings-nlp">Event</a> <!--- · <a href="#">Presentation?</a> -->
             </div>
           </li>
@@ -580,7 +605,7 @@
             <div class="event-location">Vienna, Austria</div>
             <div>
               Nikola Ljubešić: ParlaMint - How recent developments in NLP help us reveal the hidden treasures of parliamentary proceedings
-			  <br/>
+           <br/>
               <a href="https://clariah.at/en/events/acdh-ch-research-lunch-nikola-ljubesic/">Event</a> <!--- · <a href="#">Presentation?</a> -->
             </div>
           </li>
@@ -611,35 +636,60 @@
             <div class="item-title">Faculty of Political Science, University of Zagreb</div>
             <div class="item-description">
               As the oldest Faculty of Political Science in Central, Eastern and South-East Europe, offering political science program since 1962, <a href="https://www.fpzg.unizg.hr/en/about_us">Faculty of Political Science</a> is an academic institution whose mission is acquisition and transfer of knowledge about Croatian state and politics, society, media and its international environment.
-			  <h4>Project Participant: </h4> Daniela Širinić
+           <h4>Project Participant: </h4> Daniela Širinić
             </div>
           </li>
           <li>
             <div class="item-title">Institute of Information and Communication Technologies, Bulgarian Academy of Sciences</div>
             <div class="item-description">
               The mission of the <a href="https://www.iict.bas.bg/EN/">Institute</a> is to conduct fundamental and applied research in the field of computer science, information and communication technologies (ICT), language technologies (LT) and in the development of innovative interdisciplinary applications related to these technologies.
-			<h4>Project Participants: </h4> Petya Osenova, Nikolay Paev, Teodor Valchev
+         <h4>Project Participants: </h4> Petya Osenova, Nikolay Paev, Teodor Valchev
             </div>
           </li>
           <li>
             <div class="item-title">Institute of Computer Science, Polish Academy of Sciences</div>
             <div class="item-description">
            The <a href="https://ipipan.waw.pl/en">Institute of Computer Science of the Polish Academy of Sciences</a> is a leading research centre of information technology in Poland. The Institute conducts fundamental and applied research in computer science and linguistics, developing both formal methods and computational models.
-			<h4>Project Participants: </h4> Maciej Ogrodniczuk, Łukasz Kobyliński
+         <h4>Project Participants: </h4> Maciej Ogrodniczuk, Łukasz Kobyliński
             </div>
           </li>
           <li>
             <div class="item-title">External Collaborators</div>
             <div class="item-description">
-			<ul>
-			<li> Michal Mochtak (Radboud University)</li>
-			<li> Matyáš Kopp (Institute of Formal and Applied Linguistics) </li>
-			</ul>
+         <ul>
+         <li> Michal Mochtak (Radboud University)</li>
+         <li> Matyáš Kopp (Institute of Formal and Applied Linguistics) </li>
+         </ul>
             </div>
           </li>
         </ul>
       </section>
 
+	  <section id="contact">
+	  <h2>Contact</h2>
+	  <p class="section-intro">
+	    If you have any questions about the ParlaCAP project, its datasets, models, or any other project-related content, we will be happy to help. For all inquiries, please contact the project’s contact person below.
+	  </p>
+
+	  <ul class="item-list">
+	    <li>
+	      <div class="item-title">Contact person</div>
+	      <div class="item-description">
+	        <div class="contact-details">
+	          <div><span class="contact-label">Name:</span> <span class="contact-value">Nikola Ljubešić</span></div>
+	          <div><span class="contact-label">Email:</span> <span class="contact-value"><a href="mailto:[nikola.ljubesic@ijs.si]">nikola.ljubesic@ijs.si</a></span></div>
+	        </div>
+	      </div>
+	    </li>
+	    <li>
+	      <div class="item-title">CLARIN.SI Helpdesk</div>
+	      <div class="item-description">
+	          <div><span class="contact-label">Email:</span> <span class="contact-value"><a href="mailto:[info@clarin.si]">info@clarin.si</a></span></div>
+	        </div>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
 
     </main>
 
